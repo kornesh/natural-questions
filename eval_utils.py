@@ -14,9 +14,9 @@
 # limitations under the License.
 """Utility function for nq evaluation."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import collections
 import glob
