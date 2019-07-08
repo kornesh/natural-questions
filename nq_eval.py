@@ -101,7 +101,7 @@ import pickle
 from absl import app
 from absl import flags
 from absl import logging
-import eval_utils as util
+import natural_questions.eval_utils as util
 
 flags.DEFINE_string(
     'gold_path', None, 'Path to the gzip JSON data. For '
