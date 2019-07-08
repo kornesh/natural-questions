@@ -25,6 +25,7 @@ import json
 import multiprocessing
 from absl import flags
 from absl import logging
+import tensorflow as tf
 
 flags.DEFINE_integer(
     'long_non_null_threshold', 2,
@@ -257,7 +258,7 @@ def read_prediction_json(predictions_path):
 def read_annotation_from_one_split(gzipped_input_file):
   """Read annotation from one split of file."""
   if isinstance(gzipped_input_file, str):
-    gzipped_input_file = open(gzipped_input_file, 'rb')
+    gzipped_input_file = tf.gfile.Open(gzipped_input_file, 'rb')
   logging.info('parsing %s ..... ', gzipped_input_file.name)
   annotation_dict = {}
   with GzipFile(fileobj=gzipped_input_file) as input_file:
